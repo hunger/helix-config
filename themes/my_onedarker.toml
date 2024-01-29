@@ -1,0 +1,15 @@
+inherits = "onedarker"
+
+"comment" = { modifiers = ["dim"] }
+"diagnostic" = { underline.style = "curl" }
+
+"ui.virtual.indent-guide" = { fg = "#202020" }
+"ui.virtual.inlay-hint" = { modifiers = ["italic", "dim"] }
+"ui.virtual.ruler" = { bg = "ruler" }
+"ui.cursorline.primary" = { bg = "ruler" }
+
+[palette]
+purple = "#bd93f9"
+pink = "#ff79c6"
+ruler = "#181C20"
+
