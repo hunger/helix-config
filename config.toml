@@ -40,6 +40,12 @@ L = ":buffer-next"
 A-x = "extend_to_line_bounds"
 X = ["extend_line_up", "extend_to_line_bounds"]
 
+"$" = ["select_mode", "goto_line_end", "normal_mode"]
+"^" = ["select_mode", "goto_line_start", "normal_mode"]
+
 [keys.select]
 A-x = "extend_to_line_bounds"
 X = ["extend_line_up", "extend_to_line_bounds"]
+
+"$" = "goto_line_end"
+"^" = "goto_line_start"
