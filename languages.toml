@@ -27,18 +27,19 @@ auto-format = true
 name = "rust"
 
 [language-server.rust-analyzer.config]
-checkOnSave = true
-check.command = "clippy"
 cargo.allFeatures = true
 cargo.buildScripts = true
-cargo.extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" }
 cargo.extraArgs = [ "--profile", "rust-analyzer" ]
+cargo.extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" }
+check.command = "clippy"
+checkOnSave = true
 procMacro.enable = true
+timeout = 30
 
 [[language]]
-name = "typescript"
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+name = "typescript"
 
 [[language]]
 name = "vue"
