@@ -1,30 +1,20 @@
-[[language]]
-name = "html"
-file-types = ["html", "mjml"]
-# formatter = { command = 'prettier', args = ["--parser", "hubl", "--plugin-search-dir", "/home/leonie/.local/share/pnpm/global/5/"] }
-language-servers = [ "vscode-html-language-server", "tailwindcss-ls" ]
+# introduce new language server
+[language-server.scls]
+command = "simple-completion-language-server"
 
-[[language]]
-name = "json"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
+[language-server.scls.config]
+max_completion_items = 20     # set max completion results len for each group: words, snippets, unicode-input
+snippets_first = true         # completions will return before snippets by default
+feature_words = true          # enable completion by word
+feature_snippets = true       # enable snippets
+feature_unicode_input = true  # enable "unicode input"
+feature_paths = true          # enable path completion
 
-[[language]]
-name = "css"
-formatter = { command = 'prettier', args = ["--parser", "css"] }
-language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
 
-[[language]]
-name = "javascript"
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-# auto-format = true
-
-[[language]]
-name = "php"
-roots = ["composer.lock"]
-auto-format = true
-
-[[language]]
-name = "rust"
+# write logs to /tmp/completion.log
+[language-server.scls.environment]
+RUST_LOG = "info,simple-completion-langauge-server=info"
+LOG_FILE = "/tmp/completion.log"
 
 [language-server.rust-analyzer.config]
 cargo.allFeatures = true
@@ -36,29 +26,26 @@ checkOnSave = true
 procMacro.enable = true
 timeout = 30
 
+# append langage server to existed languages
 [[language]]
-auto-format = true
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-name = "typescript"
+name = "rust"
+language-servers = [ "scls", "rust-analyzer", "slint-lsp" ]
 
 [[language]]
-name = "vue"
-formatter = { command = 'prettier', args = ["--parser", "vue"] }
-auto-format = true
+name = "slint"
+language-servers = [ "scls", "slint-lsp" ]
 
 [[language]]
-name = "xml"
-file-types = ["xml", "xlf"]
+name = "git-commit"
+language-servers = [ "scls" ]
 
+# introduce a new language to enable completion on any doc by forcing set language with :set-language stub
 [[language]]
-name = "yaml"
-formatter = { command = 'prettier', args = ["--parser", "yaml"] }
-auto-format = true
+name = "stub"
+scope = "text.stub"
+file-types = []
+shebangs = []
+roots = []
+auto-format = false
+language-servers = [ "scls" ]
 
-[language-server.yaml-language-server.config]
-# https://github.com/redhat-developer/yaml-language-server#language-server-settings
-yaml = { keyOrdering = false }
-
-[[language]]
-name = "env"
-file-types = [".env", ".env.local", ".env.development", ".env.production", ".env.dist", ".envrc"]

@@ -1,0 +1,29 @@
+[[snippets]]
+prefix = "gpl"
+body = "$LINE_COMMENT Copyright (C) $CURRENT_YEAR Tobias Hunger <tobias.hunger@gmail.com>\n$LINE_COMMENT SPDX-License-Identifier: ${1|GPL-3.0-or-later,GPL-3.0-only,GPL-2.0-only|}\n\n"
+description = "A SPDX Header (GPL)."
+
+[[snippets]]
+prefix = "lgpl"
+body = "$LINE_COMMENT Copyright (C) $CURRENT_YEAR Tobias Hunger <tobias.hunger@gmail.com>\n$LINE_COMMENT SPDX-License-Identifier: ${1|LGPL-3.0-or-later,LGPL-3.0-only,LGPL-2.0-only|}\n\n"
+description = "A SPDX Header (xGPL)."
+
+[[snippets]]
+prefix = "slint"
+body = "$LINE_COMMENT Copyright © SixtyFPS GmbH <info@slint.dev>\n$LINE_COMMENT SPDX-License-Identifier: GPL-3.0-only OR LicenseRef-Slint-Royalty-free-1.1 OR LicenseRef-Slint-commercial\n\n"
+description = "A SPDX Header (sixtyfps)."
+
+[[snippets]]
+prefix = "HEADER"
+body = "$LINE_COMMENT ---------------------------------------------------------------------------\n$LINE_COMMENT ${1}:\n$LINE_COMMENT ---------------------------------------------------------------------------\n\n${0}"
+description = "A Section Header Comment"
+
+[[snippets]]
+prefix = "SUBHEADER"
+body ="$LINE_COMMENT ${1}:\n$LINE_COMMENT ---------------------------------------------------------------------------\n\n${0}"
+description = "A Sub-Section Header Comment"
+
+[[snippets]]
+prefix = "debug"
+body = "$LINE_COMMENT <debug>\n${1}\n$LINE_COMMENT </debug>\n${0}"
+description = "A debug markup comment"
