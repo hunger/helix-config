@@ -10,7 +10,7 @@ description = "A SPDX Header (xGPL)."
 
 [[snippets]]
 prefix = "slint"
-body = "$LINE_COMMENT Copyright © SixtyFPS GmbH <info@slint.dev>\n$LINE_COMMENT SPDX-License-Identifier: GPL-3.0-only OR LicenseRef-Slint-Royalty-free-1.1 OR LicenseRef-Slint-commercial\n\n"
+body = "$LINE_COMMENT Copyright © SixtyFPS GmbH <info@slint.dev>\n$LINE_COMMENT SPDX-License-Identifier: GPL-3.0-only OR LicenseRef-Slint-Royalty-free-2.0 OR LicenseRef-Slint-Software-3.0\n\n"
 description = "A SPDX Header (sixtyfps)."
 
 [[snippets]]
