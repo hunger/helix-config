@@ -13,6 +13,7 @@ feature_paths = true          # enable path completion
 # [language-server.scls.environment]
 # RUST_LOG = "info,simple-completion-langauge-server=info"
 # LOG_FILE = "/tmp/completion.log"
+# write logs to /tmp/completion.log
 
 [language-server.rust-analyzer.config]
 cargo.allFeatures = true
@@ -25,9 +26,12 @@ procMacro.enable = true
 timeout = 30
 
 # append langage server to existed languages
+# [[language]]
+# name = "rust"
+# language-servers = [ "scls", "rust-analyzer", "slint-lsp" ]
 [[language]]
 name = "rust"
-language-servers = [ "scls", "rust-analyzer", "slint-lsp" ]
+language-servers = [ "scls", "rust-analyzer" ]
 
 [[language]]
 name = "slint"
