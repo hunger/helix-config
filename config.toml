@@ -2,10 +2,12 @@ theme = "my_onedarker"
 
 [editor]
 auto-format = true
-cursorline = true
 color-modes = true
+completion-replace = true
+cursorline = true
+end-of-line-diagnostics = "hint"
 line-number = "relative"
-# mouse = false
+mouse = true
 rulers = [ 80, 100 ]
 scrolloff = 8
 true-color = true
@@ -24,6 +26,10 @@ display-inlay-hints = true
 
 [editor.indent-guides]
 render = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+other-lines = "hint"
 
 [editor.statusline]
 left = [ "mode", "file-name", "read-only-indicator", "file-modification-indicator", "version-control" ]
