@@ -2,12 +2,16 @@
 command = "biome"
 args = ["lsp-proxy"]
 
+[language-server.crates-lsp]
+command = "crates-lsp"
+args = []
+
 [language-server.neocmakelsp]
 command = "neocmakelsp"
 args = ["--stdio"]
 
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+[language-server.ruff]
+command = "ruff"
 
 [language-server.pyright]
 command = "pyright-langserver"
@@ -28,7 +32,7 @@ checkOnSave = true
 procMacro.enable = true
 timeout = 30
 
-[language-server.ruff-lsp.config]
+[language-server.ruff.config]
 documentFormatting = true 
 settings.run = "onSave"
 
@@ -68,6 +72,10 @@ language-servers = [
   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
   { name = "pyright", except-features = [ "format", "diagnostics" ] },
 ]
+
+[[language]]
+name = "toml"
+language-servers = ["crates-lsp", "taplo"]
 
 [[language]]
 name = "tsx"
